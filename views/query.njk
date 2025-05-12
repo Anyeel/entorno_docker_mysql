@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecutar Query</title>
+</head>
+<body>
+    <h1>Ejecutar Query SQL</h1>
+    <form method="POST" action="/query">
+        <label for="sql">Consulta SQL:</label><br>
+        <textarea id="sql" name="sql" rows="5" cols="50" placeholder="Escribe tu consulta SQL aquí"></textarea><br><br>
+        <button type="submit">Ejecutar</button>
+    </form>
+
+    {% if results %}
+        <h2>Resultados:</h2>
+        <pre>{{ results | safe }}</pre>
+    {% elif error %}
+        <h2>Error:</h2>
+        <pre>{{ error | safe }}</pre>
+    {% endif %}
+</body>
+</html>
