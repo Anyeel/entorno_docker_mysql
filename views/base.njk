@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Proyecto con Docker y MySQL{% endblock %}</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Proyecto con Docker y MySQL</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/users">Usuarios</a></li>
+        <li><a href="/chats">Chats</a></li>
+        <li><a href="/query">Consultas</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    <p>Bienvenido al proyecto con Docker y MySQL. Este proyecto utiliza un contenedor Docker para levantar un entorno con MySQL y una base de datos preconfigurada.</p>
+    <p>Usa las opciones del menú para explorar las funcionalidades.</p>
+    {% endblock %}
+  </main>
+  <footer>
+    <p>© 2025 Proyecto con Docker y MySQL</p>
+  </footer>
+</body>
+</html>

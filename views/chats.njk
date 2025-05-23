@@ -1,23 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Chats</title>
-</head>
-<body>
-    <h1>Lista de Chats</h1>
-    <ul>
-        {% for chat in chats %}
-            <li>
-                <strong>ID:</strong> {{ chat.id }} <br>
-                <strong>Cliente:</strong> {{ chat.clientid }} <br>
-                <strong>Mensaje:</strong> {{ chat.content }} <br>
-                <strong>Fecha:</strong> {{ chat.created_at }}
-            </li>
-        {% else %}
-            <li>No hay chats disponibles.</li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base.njk" %}
+
+{% block title %}Chats{% endblock %}
+
+{% block content %}
+<h2>Lista de Chats</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Contenido</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for chat in chats %}
+    <tr>
+      <td>{{ chat.id }}</td>
+      <td>{{ chat.clientid }}</td>
+      <td>{{ chat.content }}</td>
+      <td>{{ chat.created_at }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

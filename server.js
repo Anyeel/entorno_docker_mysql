@@ -24,12 +24,10 @@ nunjucks.configure('views', {
 app.set('view engine', 'nunjucks');
 app.set('views', './views');
 
-// Ruta principal
 app.get('/', (req, res) => {
-    res.render('index.njk');
+    res.render('base.njk');
 });
 
-// Ruta para mostrar usuarios
 app.get('/users', async (req, res) => {
     try {
         const [rows] = await db.query('SELECT login, password FROM users');
@@ -51,7 +49,7 @@ app.get('/chats', async (req, res) => {
 });
 
 app.get('/query', async (req, res) => {
-    const { sql } = req.query; // Obtiene la consulta SQL desde los parámetros de la URL
+    const { sql } = req.query; 
     try {
         if (!sql) {
             return res.render('query.njk', { error: 'No se proporcionó ninguna consulta SQL.' });
@@ -75,7 +73,6 @@ app.post('/query', async (req, res) => {
     }
 });
 
-// Middleware para manejar errores
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Algo salió mal');

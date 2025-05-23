@@ -1,0 +1,38 @@
+body {
+  background-color: black;
+  color: #00ff00;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h1, h2, h3 {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+a {
+  color: #00ff00;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  background-color: #111;
+  color: #00ff00;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: #111;
+  color: #00ff00;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
